@@ -13,6 +13,9 @@ namespace KestrelService.Controllers.API
     [Route("api/contacts")]
     public class ContactController
     {
+        /// <summary>
+        /// Static contacts data for testing
+        /// </summary>
         protected static IEnumerable<Contact> Contacts = new List<Contact>()
         {
             new Contact { Id="1", Name="Chuck Jones" },
@@ -21,6 +24,10 @@ namespace KestrelService.Controllers.API
             new Contact { Id="4", Name="Wile E. Coyote" },
         };
 
+        /// <summary>
+        /// Gets all the contacts
+        /// </summary>
+        /// <returns>All contacts</returns>
         [HttpGet]
         public IEnumerable<Contact> GetAllContacts() => ContactController.Contacts;
 
